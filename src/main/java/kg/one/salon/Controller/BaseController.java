@@ -1,0 +1,25 @@
+package kg.one.salon.Controller;
+
+import kg.one.salon.Model.BaseEntity;
+import kg.one.salon.Service.Base.BaseService;
+import org.springframework.web.bind.annotation.*;
+
+public abstract class BaseController <E extends BaseEntity, S extends BaseService<E>>{
+    private final S service;
+
+    protected BaseController(S service) {
+        this.service = service;
+    }
+
+    @GetMapping("/findById/{id}")
+    E findById(@PathVariable Long id) {return this.service.findById(id);}
+
+    @PutMapping("/update")
+    E update(@RequestBody E e){return  this.service.update(e);}
+
+    @PostMapping("/create")
+    E create(@RequestBody E e){return this.service.create(e);}
+
+    @DeleteMapping("/delete/{id}")
+    void delete(@PathVariable Long id){ this.service.deleteById(id);}
+}
