@@ -1,13 +1,15 @@
 package kg.one.salon.Service.Base;
 
 import kg.one.salon.Model.BaseEntity;
+import kg.one.salon.Model.Dto.BaseDto;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
-
-public interface BaseService<E extends BaseEntity> {
-    E findById(Long id);
+@Service
+public interface BaseService<E extends BaseEntity, D extends BaseDto> {
+    D findById(Long id);
     void deleteById(Long id);
-    E update(E dto);
-    E create(E dto);
-    List<E> findAll();
+    ResponseEntity<?> update(D dto);
+    ResponseEntity<?> create(D dto);
+    ResponseEntity<?> findAll();
 }

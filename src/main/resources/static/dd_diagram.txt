@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: https://reports.megacom.local/plugins/sql_designer/?keyword=? -->
+<sql>
+<datatypes db="oracle">
+	<group label="Number" color="rgb(238,238,170)">
+		<!-- <type label="INTEGER" length="0" sql="INTEGER" re="INT" quote="" /> -->
+		<type label="NUMBER" length="1" sql="NUMBER" re="INT" quote=""/>
+	</group>
+
+	<group label="Character" color="rgb(255,200,200)">
+		<type label="CHAR" length="1" sql="CHAR" quote="'"/>
+		<type label="VARCHAR2" length="1" sql="VARCHAR2" quote="'"/>
+		<type label="CLOB" length="0" sql="CLOB" re="TEXT" quote="'"/>
+		<!-- <type label="NCHAR" length="1" sql="NCHAR" quote="'"/> -->
+		<!-- <type label="NVARCHAR2" length="1" sql="NVARCHAR2"  quote="'"/> -->
+		<!-- <type label="NCLOB" length="0" sql="NCLOB" re="TEXT" quote="'"/> -->
+	</group>
+
+	<group label="Date &amp; Time" color="rgb(200,255,200)">
+		<type label="DATE" length="0" sql="DATE" quote=""/>
+		<type label="TIMESTAMP" length="1" sql="TIMESTAMP" quote=""/>
+	</group>
+
+	<group label="Other" color="rgb(200,200,255)">
+		<!-- <type label="RAW" length="1" sql="RAW" quote="'"/> -->
+		<type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
+		<!-- <type label="DECIMAL" length="1" sql="DECIMAL" re="DEC" quote="" /> -->
+		<type label="FLOAT" length="1" sql="FLOAT" quote=""/>
+		<type label="DOUBLE" length="0" sql="DOUBLE PRECISION" quote=""/>
+		<type label="XMLTYPE" length="0" sql="XMLTYPE" quote=""/>
+	</group>
+</datatypes><table x="568" y="115" name="salons">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="active" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="802" y="85" name="branches">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="address" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="lat" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="lon" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="active" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="salon_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="salons" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1036" y="74" name="phones">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="phone" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="branch_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="branches" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1085" y="339" name="clients">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="phone" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="pin" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="250" y="403" name="masters">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="460" y="328" name="master_work_days">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="master_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="masters" row="id" />
+</row>
+<row name="branch_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="branches" row="id" />
+</row>
+<row name="work_day" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="start_time" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="end_time" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="add_date" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="edit_date" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="admin_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="admins" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="796" y="296" name="reserved_hours">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="start_time" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="end_time" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="work_day_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="master_work_days" row="id" />
+</row>
+<row name="client_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="clients" row="id" />
+</row>
+<row name="status" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="admin_id" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default><relation table="admins" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="757" y="612" name="admins">
+<row name="id" null="1" autoincrement="1">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="login" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="password" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<row name="status" null="1" autoincrement="0">
+<datatype>NUMBER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+</sql>

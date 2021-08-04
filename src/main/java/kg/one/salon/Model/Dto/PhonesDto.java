@@ -1,11 +1,12 @@
 package kg.one.salon.Model.Dto;
 
-import kg.one.salon.Model.BaseEntity;
 import kg.one.salon.Model.Branches;
+import lombok.Data;
 
-import javax.persistence.OneToOne;
+@Data
+public class PhonesDto extends BaseDto {
 
-public class PhonesDto extends BaseEntity {
+
     private String phone;
-    private Branches branch;
+    private BranchesDto branch;
 }

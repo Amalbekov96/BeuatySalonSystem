@@ -1,9 +1,9 @@
 package kg.one.salon.Repository;
 
 import kg.one.salon.Model.BaseEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
-public interface BaseRepository<E extends BaseEntity> extends CrudRepository<E, Long> {
+@Repository
+public interface BaseRepository<E extends BaseEntity> extends JpaRepository<E, Long> {
 }

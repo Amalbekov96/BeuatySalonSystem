@@ -1,23 +1,27 @@
 package kg.one.salon.Model.Dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import kg.one.salon.Model.Admins;
-import kg.one.salon.Model.BaseEntity;
 import kg.one.salon.Model.Branches;
 import kg.one.salon.Model.Masters;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-public class MastersWorkDaysDto extends BaseEntity {
+@Data
+public class MastersWorkDaysDto extends BaseDto{
 
-    private Masters master_id;
-    private Branches branch_id;
-    private Date workDay;
+
+    private MastersDto master_id;
+    private BranchesDto branch_id;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private LocalDate workDay;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-    private Date addDate;
-    private Date editDate;
-    private Admins admin_id;
+    private LocalDateTime addDate;
+    private LocalDateTime editDate;
+    private AdminsDto admin_id;
 }

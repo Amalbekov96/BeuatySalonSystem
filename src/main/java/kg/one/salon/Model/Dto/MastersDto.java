@@ -1,7 +1,8 @@
 package kg.one.salon.Model.Dto;
 
-import kg.one.salon.Model.BaseEntity;
+import lombok.Data;
 
-public class MastersDto extends BaseEntity {
+@Data
+public class MastersDto extends BaseDto {
     private String name;
 }

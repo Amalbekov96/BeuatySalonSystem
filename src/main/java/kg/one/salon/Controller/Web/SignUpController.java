@@ -1,6 +1,8 @@
 package kg.one.salon.Controller.Web;
 
 import kg.one.salon.Model.Branches;
+import kg.one.salon.Model.Dto.BranchesDto;
+import kg.one.salon.Model.Dto.MastersWorkDaysDto;
 import kg.one.salon.Model.Masters;
 import kg.one.salon.Model.MastersWorkDays;
 import kg.one.salon.Service.BranchesService;
@@ -23,15 +25,15 @@ public class SignUpController {
     @Autowired
     private MastersWorkDaysService mastersWorkDaysService;
 
-    @GetMapping("/getBranches/{id}")
-    public @ResponseBody
-    List<Branches> getBranches(@PathVariable("id") Long id){
-        return branchesService.findBySalonId(id);
-    }
-
-    @GetMapping("/getMastersAndHours/{branchId}/{masterId}")
-    public @ResponseBody
-    List<MastersWorkDays> getMastersAndHours(@PathVariable("branchId") Long branchId, @PathVariable("masterId") Long masterId){
-        return mastersWorkDaysService.findBybranchIdAndMasterId(branchId, masterId);
-    }
+//    @GetMapping("/getBranches/{id}")
+//    public @ResponseBody
+//    List<BranchesDto> getBranches(@PathVariable("id") Long id){
+//        return branchesService.findBySalonId(id);
+//    }
+//
+//    @GetMapping("/getMastersAndHours/{branchId}/{masterId}")
+//    public @ResponseBody
+//    List<MastersWorkDaysDto> getMastersAndHours(@PathVariable("branchId") Long branchId, @PathVariable("masterId") Long masterId){
+//        return mastersWorkDaysService.findBybranchIdAndMasterId(branchId, masterId);
+//    }
 }
