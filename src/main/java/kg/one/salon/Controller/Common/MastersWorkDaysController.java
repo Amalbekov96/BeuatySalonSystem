@@ -16,17 +16,13 @@ import java.time.LocalDate;
 @RestController
 @RequestMapping("/api/v1/workdays")
 public class MastersWorkDaysController extends BaseController<MastersWorkDays, MastersWorkDaysDto, MastersWorkDaysService> {
+    @Autowired
     protected MastersWorkDaysController(MastersWorkDaysService service) {
         super(service);
     }
 
-    private MastersWorkDaysService service;
-
     @Autowired
-    public MastersWorkDaysController(MastersWorkDaysService service, MastersWorkDaysService service1) {
-        super(service);
-        this.service = service1;
-    }
+    private MastersWorkDaysService service;
 
     @GetMapping("/allMasters/{id}")
     public ResponseEntity<?> findAllMasters(@PathVariable("id") Long id){

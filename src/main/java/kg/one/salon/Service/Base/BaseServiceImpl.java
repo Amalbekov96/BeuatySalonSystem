@@ -27,9 +27,7 @@ public abstract class BaseServiceImpl<E extends BaseEntity, D extends BaseDto, R
 
     @Override
     public D findById(Long id) {
-
         E e = repo.findById(id).orElseThrow(()-> new EntityNotFound("Entity was not found!"));
-
         return mapper.toDto(e);
     }
 
@@ -40,9 +38,6 @@ public abstract class BaseServiceImpl<E extends BaseEntity, D extends BaseDto, R
 
     @Override
     public ResponseEntity<?> update(D d) {
-
-
-
         try {
             return ResponseEntity.ok(mapper.toDto(repo.save(mapper.toEntity(d))));
         } catch (Exception e){

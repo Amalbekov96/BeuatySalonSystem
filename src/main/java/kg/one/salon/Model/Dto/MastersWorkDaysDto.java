@@ -15,8 +15,8 @@ import java.time.LocalDateTime;
 public class MastersWorkDaysDto extends BaseDto{
 
 
-    private MastersDto master_id;
-    private BranchesDto branch_id;
+    private MastersDto master;
+    private BranchesDto branch;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate workDay;
     private LocalDateTime startTime;
