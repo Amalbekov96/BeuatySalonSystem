@@ -46,4 +46,4 @@ iii.
 
 ## An image of database diagram
 
-![alt text](https://github.com/[Amalbekov96]/[BeuatySalonSystem]/blob/[master]/DB Diagram.png?raw=true)
+![plot](./DB Diagram.png)
