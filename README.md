@@ -45,5 +45,4 @@ iii.
 
 
 ## An image of database diagram
-
-![plot](./DB_Diagram.png)
+![Screenshot](DB Diagram.png)
